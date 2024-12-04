@@ -1,0 +1,7 @@
+spotify_importer.import_form:
+  title: 'Spotify JSON Import'
+  description: 'Import content from a Spotify JSON file.'
+  parent: system.admin_structure
+  route_name: spotify_importer.import_form
+  weight: 100
+

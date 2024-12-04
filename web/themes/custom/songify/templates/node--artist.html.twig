@@ -1,0 +1,15 @@
+<article{{ attributes.addClass('container artist-page') }}>
+  <div class="artist-cover-banner">
+    {{ content.field_image }}
+  </div>
+  {% for key, value in content %}
+    {% if 'field_' in key or key == 'body' %}
+      {% if value['#title'] is not empty and 'field_image' != key %}
+        <div class="{{ key }}">
+          <div class="artist-content-label">{{ value['#title'] }}</div>
+          {{ value }}
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</article>

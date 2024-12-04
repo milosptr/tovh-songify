@@ -1,0 +1,21 @@
+<article{{ attributes.addClass('container track-page') }}>
+  <div class="track-cover-banner">
+    {{ content.field_image }}
+  </div>
+  {% for key, value in content %}
+    {% if 'field_' in key or key == 'body' %}
+      {% if value['#title'] and 'field_image' != key %}
+        <div class="{{ key }}">
+          <div class="track-content-label">{{ value['#title'] }}</div>
+          {% if key == 'field_spotify_id' %}
+            <a href="https://open.spotify.com/track/{{ value['#items'].value }}" target="_blank"/>
+              Listen on Spotify
+            </a>
+          {% else %}
+            {{ value }}
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+</article>

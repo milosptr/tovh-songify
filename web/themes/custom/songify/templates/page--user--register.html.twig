@@ -1,0 +1,19 @@
+{% extends 'page.html.twig' %}
+
+{% block content %}
+  <section class="register-page">
+    <div id="site-logo">
+      {% if site_logo %}
+        <a href="/" title="{{ site_name }}">
+          <img src="/{{ site_logo }}" alt="{{ site_name }}" />
+        </a>
+      {% endif %}
+    </div>
+    <div class="container">
+      {{ page.content }}
+    </div>
+    <div class="not-a-member">
+      Already have an account? <a href="/user/login" >Login here</a>
+    </div>
+  </section>
+{% endblock %}

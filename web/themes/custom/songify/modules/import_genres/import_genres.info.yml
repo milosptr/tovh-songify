@@ -1,0 +1,7 @@
+name: 'Import Genres'
+type: module
+description: 'A custom module to import Spotify genres into a taxonomy vocabulary.'
+core_version_requirement: ^9 || ^10 || ^11
+package: Custom
+dependencies:
+  - drupal:taxonomy

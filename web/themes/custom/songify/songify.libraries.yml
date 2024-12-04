@@ -1,0 +1,15 @@
+global-styling:
+  version: 1.0.0
+  css:
+    theme:
+      css/style.css: {}
+  js:
+    js/custom.js: {}
+
+fonts:
+  license:
+    name: Apache License
+    url: https://github.com/google/roboto/blob/master/LICENSE
+  css:
+    theme:
+      '//fonts.googleapis.com/css2?family=Parkinsans:wght@300..800&display=swap': {type: external}

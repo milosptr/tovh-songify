@@ -1,0 +1,7 @@
+import_genres.import:
+  path: '/admin/import-genres'
+  defaults:
+    _controller: '\Drupal\import_genres\Controller\ImportGenresController::import'
+    _title: 'Import Genres'
+  requirements:
+    _permission: 'administer taxonomy'

@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<header id="site-header">
+  <div id="site-logo">
+    {% if site_logo %}
+      <a href="/" title="{{ site_name }}">
+        <img src="/{{ site_logo }}" alt="{{ site_name }}" />
+      </a>
+    {% endif %}
+  </div>
+  <div id="site-navigation">
+    {% for key, value in page.header %}
+      {% if 'songify' in key %}
+        {{ value }}
+      {% endif %}
+    {% endfor %}
+  </div>
+</header>
+<main {{ attributes.addClass() }}>
+  {% block content %}
+    <div class="custom-content">
+      <p>{{ custom_variable }}</p>
+    </div>
+    {{ page.content }}
+  {% endblock %}
+</main>
+<footer>
+  {{ page.footer }}
+</footer>
