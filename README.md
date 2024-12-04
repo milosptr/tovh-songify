@@ -1,3 +1,6 @@
+# Download files for this project
+> ⚠️ Available until 11.12.2024 (7 days) [WeTransfer files link](https://we.tl/t-TFHhbYOeAR)
+
 # Songify
 
 Songify is a Drupal-based web application designed to showcase music albums, artists, tracks, and publishers. It integrates with the Spotify API to import top tracks and associated data, providing users with a rich musical experience.
