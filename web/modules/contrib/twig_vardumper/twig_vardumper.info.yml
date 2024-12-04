@@ -1,0 +1,10 @@
+name: Twig VarDumper
+type: module
+description: 'Provides a way to display Twig PHP variables in a pretty way.'
+core_version_requirement: ^9 || ^10 || ^11
+package: Development
+
+# Information added by Drupal.org packaging script on 2024-09-12
+version: '3.2.0'
+project: 'twig_vardumper'
+datestamp: 1726161286
