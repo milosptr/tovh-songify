@@ -798,3 +798,25 @@ main[class^="path-taxonomy-term-"] #block-songify-content .views-row {
 main[class^="path-taxonomy-term-"] .pager {
   width: 100%;
 }
+
+/* Advertisement */
+.advertisement {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.advertisement a {
+  display: block;
+  width: 100%;
+  height: 300px;
+  background: var(--primary-darker);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.advertisement img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
