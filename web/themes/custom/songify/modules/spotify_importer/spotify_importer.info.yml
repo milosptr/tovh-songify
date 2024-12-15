@@ -1,0 +1,8 @@
+name: Spotify Importer
+type: module
+description: Imports Artists, Albums, and Tracks from a Spotify JSON file.
+core_version_requirement: ^9 || ^10 || ^11
+package: Custom
+dependencies:
+  - drupal:node
+  - drupal:file

@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * Implements hook_menu_links_discovered_alter().
+ */
+function musicsearch_menu_links_discovered_alter(&$links) {
+  if (isset($links['musicsearch.search_page'])) {
+    $links['musicsearch.search_page']['options']['attributes']['class'][] = 'menu-icon-music-search';
+  }
+}
+
+/**
+ * Implements hook_page_attachments().
+ */
+function musicsearch_page_attachments(array &$attachments) {
+  $path = \Drupal::routeMatch()->getRouteObject()->getPath();
+  // Basically I want to add the library to all admin pages
+  if (str_contains($path, '/admin')) {
+    $attachments['#attached']['library'][] = 'musicsearch/musicsearch_styles';
+  }
+}

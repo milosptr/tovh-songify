@@ -1,0 +1,7 @@
+spotify_importer.import_form:
+  path: '/admin/content/spotify-import'
+  defaults:
+    _form: '\Drupal\spotify_importer\Form\SpotifyImportForm'
+    _title: 'Spotify JSON Import'
+  requirements:
+    _permission: 'administer nodes'

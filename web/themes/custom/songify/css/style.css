@@ -1,0 +1,822 @@
+:root {
+  --primary-darkest: #240046;
+  --primary-darker: #3C096C;
+  --primary-dark: #5A189A;
+  --primary-color: #7B2CBF;
+  --primary-light: #9D4EDD;
+  --primary-lighter: #C77DFF;
+  --primary-lightest: #E0AAFF;
+  --gray-100: #f8f9faff;
+  --gray-200: #e9ecefff;
+  --gray-300: #dee2e6ff;
+  --gray-400: #ced4daff;
+  --gray-500: #adb5bdff;
+  --gray-600: #6c757dff;
+  --gray-700: #495057ff;
+  --gray-800: #343a40ff;
+  --gray-900: #212529ff;
+}
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Parkinsans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-dark);
+}
+
+/* General */
+nav[aria-labelledby="pagination-heading"] {
+  grid-column: span 6;
+}
+
+/* Queries */
+.container,
+#block-songify-page-title h1,
+.type-publisher article,
+main[class^="path-taxonomy-term-"] #block-songify-content {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.container-fluid {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .container,
+  #block-songify-page-title h1,
+  .type-publisher article,
+  main[class^="path-taxonomy-term-"] #block-songify-content {
+    max-width: 640px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container,
+  #block-songify-page-title h1,
+  .type-publisher article,
+  main[class^="path-taxonomy-term-"] #block-songify-content {
+    max-width: 768px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container,
+  #block-songify-page-title h1,
+  .type-publisher article,
+  main[class^="path-taxonomy-term-"] #block-songify-content {
+    max-width: 1024px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container,
+  #block-songify-page-title h1,
+  .type-publisher article,
+  main[class^="path-taxonomy-term-"] #block-songify-content {
+    max-width: 1280px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .container,
+  #block-songify-page-title h1,
+  .type-publisher article,
+  main[class^="path-taxonomy-term-"] #block-songify-content {
+    max-width: 1536px;
+  }
+}
+
+
+
+/* Global */
+#block-songify-page-title,
+.path-search-results h1,
+.tracks-grid {
+  padding: 0 1rem;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+}
+
+header #site-logo img {
+  height: 70px;
+}
+
+header #site-navigation {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+header #site-navigation input::placeholder {
+  color: var(--gray-600);
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.search-container {
+  position: relative;
+  width: 100%;
+}
+
+.search-container .search-icon {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+  transform: translateY(-50%);
+  color: var(--gray-500);
+}
+
+header #site-navigation form[action="/search/results"] {
+  width: 300px;
+}
+
+header #site-navigation form[action="/search/results"] input {
+  padding-right: calc(0.75rem + 20px);
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  gap: 1rem;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--primary-darkest);
+  font-size: 1.2rem;
+}
+
+header nav .is-active {
+  color: var(--primary-color);
+}
+
+header #block-songify-accountlinks ul,
+header #block-songify-useraccountmenu ul{
+  position: relative;
+  background: #fff;
+}
+
+header #block-songify-accountlinks ul ul,
+header #block-songify-useraccountmenu ul ul {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  position: absolute;
+  right: calc(50% - 70px);
+  top: 30px;
+  z-index: 999;
+}
+
+header #block-songify-accountlinks.open ul ul,
+header #block-songify-useraccountmenu.open ul ul {
+  display: flex;
+  border-radius: 0 0 0.25rem 0.25rem;
+  border: 1px solid var(--gray-400);
+  overflow: hidden;
+}
+
+header #block-songify-accountlinks.open ul ul a,
+header #block-songify-useraccountmenu.open ul ul a {
+  display: block;
+  padding: 0.5rem 2rem;
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--gray-400);
+  transition: all 0.3s ease-in-out;
+}
+
+header #block-songify-accountlinks.open ul ul a:hover,
+header #block-songify-useraccountmenu.open ul ul a:hover {
+  background: var(--primary-lightest);
+}
+
+/* HIGHLIGHTED ALBUMS */
+.albums-section {
+  background: var(--primary-darkest);
+  padding: 2rem 1rem;
+}
+
+.albums-section header {
+  padding: 0;
+  grid-column: span 6 / span 6;
+}
+
+.albums-section header h2 {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.albums-section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+}
+
+.albums-section .single-album {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.albums-section .single-album .album-cover {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: .5rem;
+  background: var(--primary-darkest);
+}
+
+.albums-section .single-album .album-cover a:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: .5rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1) 3%, rgba(0, 0, 0, 0) 40%);
+}
+
+.albums-section .single-album .album-cover img {
+  width: 100%;
+
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.albums-section .single-album .album-name {
+  position: absolute;
+  bottom: 1.3rem;
+  left: 0.5rem;
+}
+
+.albums-section .single-album .artist-name {
+  position: absolute;
+  bottom: 0.3rem;
+  left: 0.5rem;
+}
+
+.albums-section .single-album .album-name a {
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.albums-section .single-album:hover .album-name a {
+  color: var(--primary-lighter);
+}
+
+.albums-section .single-album .artist-name a {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+/* TRACKS */
+.albums-grid,
+.tracks-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.tracks-grid header,
+.tracks-grid form {
+  padding: 0;
+  grid-column: span 6 / span 6;
+  margin-top: 1rem;
+}
+
+.albums-grid .single-album,
+.tracks-grid .single-track {
+  display: flex;
+  flex-direction: column;
+  gap: 0.225rem;
+}
+
+.albums-grid .album-cover,
+.single-track .track-cover {
+  width: 100%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: .5rem;
+  background: var(--primary-darkest);
+}
+
+.albums-grid .album-cover img,
+.single-track .track-cover img,
+.single-artist .artist-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.albums-grid .album-name a,
+.single-track .track-title a {
+  text-decoration: none;
+  color: var(--primary-darkest);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.albums-grid .single-album:hover a,
+.single-track:hover .track-title a {
+  color: var(--primary-color);
+}
+
+.albums-grid .album-artist a,
+.albums-grid .album-release-date,
+.single-track .track-artist {
+  color: var(--gray-600);
+  font-size: 0.9rem;
+  font-weight: normal;
+}
+
+/* Music genres cards */
+.music-genres-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-top: 2rem;
+}
+
+.music-genre-card a {
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  background: var(--primary-darker);
+  border-radius: .5rem;
+  padding: 0.4rem 1.2rem;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.music-genre-card a:hover {
+  background: var(--primary-dark);
+}
+
+/* SEARCH FORM */
+form[action="/search/results"] {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+form[action="/search/results"] .form-item-keys {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+form[action="/search/results"] input[name="keys"] {
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--gray-400);
+  border-radius: 0.375rem;
+  width: 100%;
+}
+
+form[action="/search/results"] input[type="submit"] {
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--primary-dark);
+  background: var(--primary-dark);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+form[action="/search/results"] input[type="submit"]:hover {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+}
+
+header form[action="/search/results"] .form-item {
+  width: 100%;
+}
+
+header form[action="/search/results"] .form-actions {
+  display: none;
+}
+
+
+/* ARTISTS */
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0 1.5rem;
+  margin-top: 1rem;
+}
+
+.artists-grid header {
+  padding: 0;
+  grid-column: span 6 / span 6;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.artists-grid .single-artist {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--gray-400);
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+}
+
+.artists-grid .single-artist .artist-image {
+  width: 40px;
+  height: 40px;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+  border-radius: 50%;
+  background: url("/sites/default/files/placeholders/artist-placeholder.png") no-repeat center center / cover;
+}
+
+.artists-grid .single-artist .artist-title a {
+  text-decoration: none;
+  color: var(--primary-darkest);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+.artists-grid .single-artist:hover .artist-title a {
+  color: var(--primary-color);
+}
+
+
+/* ARTIST PAGE */
+.artist-page,
+.album-page,
+.track-page {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1rem 2rem;
+  margin-top: 1rem;
+}
+
+.artist-cover-banner,
+.album-cover-banner,
+.track-cover-banner {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+.artist-cover-banner div,
+.album-cover-banner div,
+.track-cover-banner div {
+  width: 100%;
+  height: 400px;
+  background: var(--primary-darkest);
+  border: 1px solid var(--gray-400);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.artist-cover-banner img,
+.album-cover-banner img,
+.track-cover-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.type-publisher .artist-cover-banner img {
+  object-fit: contain;
+}
+
+.artist-page .artist-content-label,
+.album-page .album-content-label,
+.track-page .track-content-label {
+  font-weight: bold;
+}
+
+.artist-page .field_name,
+.album-page .field_artist,
+.track-page .field_artist {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.artist-page .field_website,
+.album-page .field_publisher,
+.track-page .field_genre {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.artist-page .field_birthdate,
+.album-page .field_release_date,
+.track-page .field_duration {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.artist-page .field_deathdate,
+.album-page .field_genre,
+.track-page .field_spotify_id {
+  grid-column: auto;
+  grid-row: 2;
+}
+
+.album-page .field_tracks {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+.artist-page .body,
+.album-page .body,
+.track-page .body {
+  grid-column: 1 / -1;
+  grid-row: 3;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-400);
+}
+
+.album-page .body {
+  grid-row: 4;
+}
+
+.artist-page .body .artist-content-label {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.artist-page .body * {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.artist-page .body p {
+  margin-bottom: 0.5rem;
+}
+
+/* Pagination Container */
+.pager {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Pagination List */
+.pager__items {
+  list-style: none;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+/* Pagination Links */
+.pager__item a {
+  text-decoration: none;
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--primary-dark);
+  border: 1px solid var(--gray-200);
+  background-color: var(--gray-200);
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+/* Hover and Focus State */
+.pager__item a:hover,
+.pager__item a:focus {
+  color: var(--gray-200);
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+}
+
+/* Active Page */
+.pager__item.is-active a {
+  color: var(--gray-100);
+  background-color: var(--primary-dark);
+  border-color: var(--primary-dark);
+  cursor: default;
+  pointer-events: none;
+}
+
+/* First, Previous, Next, and Last Links */
+.pager__item--first a,
+.pager__item--previous a,
+.pager__item--next a,
+.pager__item--last a {
+  font-size: 0.9rem;
+  color: var(--gray-700);
+  background-color: var(--gray-200);
+  border-color: var(--gray-300);
+}
+
+.pager__item--first a:hover,
+.pager__item--previous a:hover,
+.pager__item--next a:hover,
+.pager__item--last a:hover {
+  color: var(--gray-100);
+  background-color: var(--primary-darker);
+  border-color: var(--primary-darker);
+}
+
+/* Visually Hidden Elements */
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+/* Accessibility Enhancements */
+.pager__items a:focus {
+  outline: 3px solid var(--primary-lighter);
+  outline-offset: 2px;
+}
+
+/* LOGIN/REGISTER PAGE*/
+.register-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 91px);
+}
+
+.register-page #site-logo a {
+  display: block;
+}
+
+.register-page #site-logo,
+.register-page #site-logo img {
+  width: 100px;
+  height: 100px;
+  margin-bottom: 1rem;
+}
+
+.register-page #block-songify-page-title h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.register-page .container {
+  max-width: 500px;
+  width: 100%;
+}
+
+.register-page .user-login-form,
+.register-page .user-register-form,
+.register-page #edit-account {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.register-page .form-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.register-page .form-item label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--gray-700);
+}
+
+.register-page .form-item .description {
+  font-size: 0.8rem;
+  color: var(--gray-500);
+}
+
+.register-page .form-item input {
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0.375rem 0.75rem;
+  border: 1px solid var(--gray-400);
+  border-radius: 0.375rem;
+  width: 100%;
+}
+
+.register-page input[type="checkbox"] {
+  width: 1rem;
+  height: 1rem;
+}
+
+.register-page input[type="submit"] {
+  font-size: 1rem;
+  font-weight: normal;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.375rem;
+  border: 1px solid var(--primary-dark);
+  background: var(--primary-dark);
+  color: #fff;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.register-page input[type="submit"]:hover {
+  background: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  background: var(--primary-color);
+}
+
+.register-page .not-a-member {
+  text-align: center;
+  color: var(--gray-600);
+  font-size: 0.8rem;
+  margin-top: 4rem;
+}
+
+.register-page .not-a-member a {
+  transition: all 0.3s ease-in-out;
+  color: var(--primary-dark);
+}
+.register-page .not-a-member a:hover {
+  color: var(--primary-color);
+}
+
+/* TAXONOMY */
+main[class^="path-taxonomy-term-"] #block-songify-content .views-element-container > div {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem 0;
+}
+
+main[class^="path-taxonomy-term-"] #block-songify-content .views-element-container > div header {
+  display: none;
+}
+
+main[class^="path-taxonomy-term-"] #block-songify-content .views-row {
+  width: 30%;
+}
+
+main[class^="path-taxonomy-term-"] .pager {
+  width: 100%;
+}
+
+/* Advertisement */
+.advertisement {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.advertisement a {
+  display: block;
+  width: 100%;
+  height: 300px;
+  background: var(--primary-darker);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.advertisement img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}

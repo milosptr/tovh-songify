@@ -1,0 +1,6 @@
+name: 'Music Search'
+type: module
+description: 'Provides music search functionality in the backend.'
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:system

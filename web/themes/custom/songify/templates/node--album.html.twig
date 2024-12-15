@@ -1,0 +1,17 @@
+<article{{ attributes.addClass('container album-page') }}>
+    <div class="album-cover-banner">
+      <div>
+        <img src="{{ file_url(content.field_image['#items'].entity.uri.value) }}" alt="{{ content.field_image['#items'].entity.alt }}">
+      </div>
+    </div>
+    {% for key, value in content %}
+      {% if 'field_' in key or key == 'body' %}
+        {% if value['#title'] and 'field_image' != key %}
+          <div class="{{ key }}">
+            <div class="album-content-label">{{ value['#title'] }}</div>
+            {{ value }}
+          </div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+</article>

@@ -1,0 +1,23 @@
+musicsearch.admin_search:
+  path: '/admin/musicsearch/music-search'
+  defaults:
+    _controller: '\Drupal\musicsearch\Controller\MusicSearchController::searchContent'
+    _title: 'Music Search'
+  requirements:
+    _permission: 'administer site configuration'
+
+musicsearch.settings:
+  path: '/admin/musicsearch/settings'
+  defaults:
+    _form: '\Drupal\musicsearch\Form\MusicSearchSettingsForm'
+    _title: 'Music Search Settings'
+  requirements:
+    _permission: 'administer site configuration'
+
+musicsearch.import_preview:
+  path: '/admin/music-search/import-preview/{row_id}'
+  defaults:
+    _controller: '\Drupal\musicsearch\Controller\MusicImportController::preview'
+    _title: 'Import Preview'
+  requirements:
+    _permission: 'administer site configuration'

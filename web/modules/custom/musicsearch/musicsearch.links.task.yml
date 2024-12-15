@@ -1,0 +1,10 @@
+musicsearch.page:
+    title: 'Music Search Import'
+    route_name: musicsearch.admin_search
+    base_route: musicsearch.admin_search
+
+musicsearch.settings:
+  title: 'Settings'
+  route_name: musicsearch.settings
+  base_route: musicsearch.admin_search
+

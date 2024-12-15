@@ -1,0 +1,15 @@
+musicsearch.search_page:
+  title: 'Music search import'
+  description: 'Search for music content'
+  route_name: musicsearch.admin_search
+  parent: system.admin
+  weight: -10
+  menu_name: admin
+
+musicsearch.settings:
+  title: 'Music Search Settings'
+  description: 'Configure Music Search API keys'
+  route_name: musicsearch.settings
+  parent: system.admin_config_services
+  weight: 10
+  menu_name: admin

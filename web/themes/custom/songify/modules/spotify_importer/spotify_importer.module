@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * Implements hook_file_presave().
+ */
+function spotify_importer_file_presave(\Drupal\file\FileInterface $file) {
+  $uri = $file->getFileUri();
+  if (strpos($uri, 'public://spotify_json/') === 0) {
+    $original_filename = $file->getFilename();
+
+    $unique_prefix = 'spotify_' . time() . '_';
+
+    $new_filename = $unique_prefix . preg_replace('/[^a-zA-Z0-9._-]/', '_', $original_filename);
+
+    $file->setFilename($new_filename);
+  }
+}
